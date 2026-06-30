@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="祥云阁生肖运势 - 每日、每周、每月、每年十二生肖运势分析，了解你的运势走向。">
+  <title>生肖运势 - 祥云阁专业命理</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">祥云阁</a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="bazi.html">八字排盘</a></li>
+          <li><a href="shengxiao.html" class="active">生肖运势</a></li>
+          <li><a href="chouqian.html">抽签求卦</a></li>
+          <li><a href="huangli.html">黄历查询</a></li>
+          <li><a href="xingming.html">姓名测试</a></li>
+        </ul>
+        <button class="mobile-menu-btn" aria-label="菜单">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 横幅广告位 -->
+  <div class="ad-banner"></div>
+
+  <!-- 页面标题 -->
+  <section class="page-header">
+    <div class="container">
+      <h1><i class="fas fa-dragon"></i> 生肖运势</h1>
+      <p class="desc">选择您的生肖，了解今日、每周、每月、每年的运势走向</p>
+    </div>
+  </section>
+
+  <!-- 主内容 -->
+  <main class="page-content">
+    <div class="container">
+      <!-- 生肖选择 -->
+      <section class="zodiac-section">
+        <div class="card">
+          <h3 class="card-title"><i class="fas fa-paw"></i> 请选择您的生肖</h3>
+          <div class="zodiac-grid" id="zodiacGrid">
+            <!-- 动态生成 -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 运势展示 -->
+      <section class="result-section" id="resultSection" style="display: none;">
+        <!-- 运势概览 -->
+        <div class="result-card">
+          <div class="result-header">
+            <span class="result-title">
+              <span id="selectedZodiacIcon"></span>
+              <span id="selectedZodiacName"></span>运势
+            </span>
+            <span class="result-badge" id="luckyDay">-</span>
+          </div>
+          <div class="fortune-overview">
+            <p id="fortuneSummary" class="fortune-summary">-</p>
+          </div>
+        </div>
+
+        <!-- 运势数值 -->
+        <div class="fortune-grid">
+          <div class="fortune-item">
+            <i class="fas fa-heart"></i>
+            <div class="label">爱情运势</div>
+            <div class="value" id="loveFortune">-</div>
+            <div class="unit">分</div>
+          </div>
+          <div class="fortune-item">
+            <i class="fas fa-briefcase"></i>
+            <div class="label">事业运势</div>
+            <div class="value" id="careerFortune">-</div>
+            <div class="unit">分</div>
+          </div>
+          <div class="fortune-item">
+            <i class="fas fa-coins"></i>
+            <div class="label">财运运势</div>
+            <div class="value" id="wealthFortune">-</div>
+            <div class="unit">分</div>
+          </div>
+          <div class="fortune-item">
+            <i class="fas fa-heartbeat"></i>
+            <div class="label">健康运势</div>
+            <div class="value" id="healthFortune">-</div>
+            <div class="unit">分</div>
+          </div>
+        </div>
+
+        <!-- 运势时间切换 -->
+        <div class="tabs">
+          <button class="tab-btn active" data-period="today">今日运势</button>
+          <button class="tab-btn" data-period="week">本周运势</button>
+          <button class="tab-btn" data-period="month">本月运势</button>
+          <button class="tab-btn" data-period="year">今年运势</button>
+        </div>
+
+        <div class="result-card">
+          <div class="result-content" id="fortuneDetail">
+            <!-- 动态内容 -->
+          </div>
+          <button class="btn btn-secondary btn-sm mt-md" id="showDetailBtn">
+            <i class="fas fa-lock"></i> 查看详细分析（需看广告）
+          </button>
+        </div>
+
+        <!-- 幸运提示 -->
+        <div class="result-card">
+          <div class="result-header">
+            <span class="result-title"><i class="fas fa-star"></i> 幸运提示</span>
+          </div>
+          <div class="lucky-tips" id="luckyTips">
+            <!-- 动态生成 -->
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- 底部导航 -->
+  <section class="bottom-nav">
+    <div class="container">
+      <div class="nav-grid">
+        <a href="jiemeng.html">解梦查询</a>
+        <a href="xingzuo.html">星座查询</a>
+        <a href="fengshui.html">风水罗盘</a>
+        <a href="shouxiang.html">手相面相</a>
+        <a href="mingpan.html">命盘解读</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <p>免责声明：本网站内容仅供娱乐参考，请勿迷信</p>
+      <p>&copy; 2026 祥云阁 All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- 广告弹窗 -->
+  <div class="ad-modal" id="adModal">
+    <div class="ad-modal-content">
+      <div class="ad-modal-icon">
+        <i class="fas fa-play-circle"></i>
+      </div>
+      <h3>解锁完整功能</h3>
+      <p>请观看视频广告，解锁完整结果</p>
+      <button class="btn btn-primary" id="adWatchBtn">
+        观看广告
+      </button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/shengxiao.js"></script>
+</body>
+</html>
