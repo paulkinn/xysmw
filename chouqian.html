@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="祥云阁抽签求卦 - 观音灵签、妈祖灵签、关帝灵签、月老姻缘签，求签问卦，解读命运指引。">
+  <title>抽签求卦 - 祥云阁专业命理</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">祥云阁</a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="bazi.html">八字排盘</a></li>
+          <li><a href="shengxiao.html">生肖运势</a></li>
+          <li><a href="chouqian.html" class="active">抽签求卦</a></li>
+          <li><a href="huangli.html">黄历查询</a></li>
+          <li><a href="xingming.html">姓名测试</a></li>
+        </ul>
+        <button class="mobile-menu-btn" aria-label="菜单">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 横幅广告位 -->
+  <div class="ad-banner"></div>
+
+  <!-- 页面标题 -->
+  <section class="page-header">
+    <div class="container">
+      <h1><i class="fas fa-hand-holding-heart"></i> 抽签求卦</h1>
+      <p class="desc">心诚则灵，求得一支好签，助您把握人生方向</p>
+    </div>
+  </section>
+
+  <!-- 主内容 -->
+  <main class="page-content">
+    <div class="container">
+      <!-- 签筒选择 -->
+      <section class="sign-type-section">
+        <div class="card">
+          <h3 class="card-title"><i class="fas fa-hand-sparkles"></i> 请选择求签类型</h3>
+          <div class="sign-type-grid" id="signTypeGrid">
+            <div class="sign-type-item selected" data-type="guanyin">
+              <i class="fas fa-hands-praying"></i>
+              <span>观音灵签</span>
+              <small>求解救苦救难</small>
+            </div>
+            <div class="sign-type-item" data-type="mazu">
+              <i class="fas fa-anchor"></i>
+              <span>妈祖灵签</span>
+              <small>求航海平安</small>
+            </div>
+            <div class="sign-type-item" data-type="guandi">
+              <i class="fas fa-shield-alt"></i>
+              <span>关帝灵签</span>
+              <small>求事业功名</small>
+            </div>
+            <div class="sign-type-item" data-type="yuelao">
+              <i class="fas fa-heart"></i>
+              <span>月老姻缘</span>
+              <small>求姻缘感情</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 问题输入 -->
+      <section class="question-section">
+        <div class="card">
+          <h3 class="card-title"><i class="fas fa-question-circle"></i> 请默念您的问题</h3>
+          <div class="form-group">
+            <textarea class="form-input" id="question" rows="3" placeholder="请在心中默念您想问的事情，例如：我今年的财运如何？"></textarea>
+          </div>
+          <div class="question-tips">
+            <p><i class="fas fa-lightbulb"></i> 提示：心诚则灵，默念问题后点击签筒求签</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 签筒 -->
+      <section class="签筒-section">
+        <div class="签筒-container">
+          <div class="签筒" id="签筒Btn" title="点击求签">
+            <i class="fas fa-hand-holding-heart"></i>
+          </div>
+          <p class="签筒-text">点击签筒，开始求签</p>
+        </div>
+      </section>
+
+      <!-- 结果展示 -->
+      <section class="result-section" id="resultSection" style="display: none;">
+        <!-- 求签结果 -->
+        <div class="result-card">
+          <div class="result-header">
+            <span class="result-title"><i class="fas fa-scroll"></i> 您求得的是</span>
+            <span class="result-badge" id="signLevel">-</span>
+          </div>
+          <div class="sign-result-display">
+            <div class="sign-number" id="signNumber">-</div>
+            <div class="sign-title" id="signTitle">-</div>
+          </div>
+          <div class="result-content" id="signContent">
+            <!-- 签文内容 -->
+          </div>
+        </div>
+
+        <!-- 签文解读 -->
+        <div class="result-card">
+          <div class="result-header">
+            <span class="result-title"><i class="fas fa-book-open"></i> 签诗全文</span>
+          </div>
+          <div class="sign-poem" id="signPoem">
+            <!-- 签诗 -->
+          </div>
+        </div>
+
+        <!-- 解签 -->
+        <div class="result-card">
+          <div class="result-header">
+            <span class="result-title"><i class="fas fa-comments"></i> 解签解读</span>
+            <button class="btn btn-sm btn-secondary" id="showDetailBtn">
+              <i class="fas fa-lock"></i> 查看详细解签（需看广告）
+            </button>
+          </div>
+          <div class="result-content" id="signInterpretation">
+            <p class="text-center" style="color: var(--color-text-muted);">
+              <i class="fas fa-info-circle"></i>
+              观看广告解锁详细解签
+            </p>
+          </div>
+        </div>
+
+        <!-- 重新求签 -->
+        <div class="text-center mt-lg">
+          <button class="btn btn-secondary" id="retryBtn">
+            <i class="fas fa-redo"></i> 重新求签
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- 底部导航 -->
+  <section class="bottom-nav">
+    <div class="container">
+      <div class="nav-grid">
+        <a href="jiemeng.html">解梦查询</a>
+        <a href="xingzuo.html">星座查询</a>
+        <a href="fengshui.html">风水罗盘</a>
+        <a href="shouxiang.html">手相面相</a>
+        <a href="mingpan.html">命盘解读</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <p>免责声明：本网站内容仅供娱乐参考，请勿迷信</p>
+      <p>&copy; 2026 祥云阁 All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- 广告弹窗 -->
+  <div class="ad-modal" id="adModal">
+    <div class="ad-modal-content">
+      <div class="ad-modal-icon">
+        <i class="fas fa-play-circle"></i>
+      </div>
+      <h3>观看广告解锁完整解签</h3>
+      <p>请观看视频广告，解锁详细解签内容</p>
+      <button class="btn btn-primary" id="adWatchBtn">
+        观看广告
+      </button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/chouqian.js"></script>
+</body>
+</html>
