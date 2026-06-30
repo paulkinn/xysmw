@@ -1,0 +1,406 @@
+/* ===== 祥云阁算命网站 - 响应式样式 ===== */
+
+/* === 平板端（768px - 1199px）=== */
+@media screen and (max-width: 1199px) {
+  .container {
+    max-width: 100%;
+    padding: 0 var(--spacing-md);
+  }
+
+  /* 导航调整 */
+  .nav-list {
+    gap: var(--spacing-md);
+  }
+
+  /* Hero 区域 */
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero .subtitle {
+    font-size: 1.125rem;
+  }
+
+  /* 功能卡片 */
+  .feature-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .feature-card {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  /* 底部导航 */
+  .nav-grid {
+    gap: var(--spacing-md);
+  }
+
+  /* 运势网格 */
+  .fortune-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* === 移动端（< 768px）=== */
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 15px;
+  }
+
+  /* 导航栏 */
+  .header .container {
+    height: 60px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: rgba(26, 10, 10, 0.98);
+    flex-direction: column;
+    padding: var(--spacing-md);
+    gap: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+
+  .nav-list li {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-list li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-list a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 1rem;
+  }
+
+  .nav-list a::after {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  /* Hero 区域 */
+  .hero {
+    padding: 7rem 0 3rem;
+    min-height: 50vh;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero .subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* 功能区 */
+  .features {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+
+  .feature-card {
+    padding: var(--spacing-md);
+  }
+
+  .feature-card i {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .feature-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .feature-card p {
+    font-size: 0.75rem;
+  }
+
+  /* 底部导航 */
+  .bottom-nav {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .nav-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+  }
+
+  .nav-grid a {
+    text-align: center;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.8125rem;
+  }
+
+  /* 页脚 */
+  .footer {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .footer p {
+    font-size: 0.75rem;
+  }
+
+  /* 页面头部 */
+  .page-header {
+    padding: 6rem 0 2rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .page-header .desc {
+    font-size: 1rem;
+  }
+
+  /* 页面内容 */
+  .page-content {
+    padding: var(--spacing-lg) 0;
+  }
+
+  /* 卡片样式 */
+  .card {
+    padding: var(--spacing-md);
+  }
+
+  /* 按钮样式 */
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9375rem;
+    min-width: 120px;
+  }
+
+  .btn-lg {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+
+  /* 表单样式 */
+  .form-input {
+    padding: 0.75rem;
+    font-size: 16px; /* 防止iOS缩放 */
+  }
+
+  /* 运势网格 */
+  .fortune-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+
+  .fortune-item {
+    padding: var(--spacing-sm);
+  }
+
+  .fortune-item i {
+    font-size: 1.5rem;
+  }
+
+  .fortune-item .value {
+    font-size: 1.25rem;
+  }
+
+  /* 广告弹窗 */
+  .ad-modal-content {
+    padding: var(--spacing-lg);
+    margin: var(--spacing-md);
+  }
+
+  .ad-modal-icon {
+    font-size: 3rem;
+  }
+
+  .ad-modal h3 {
+    font-size: 1.25rem;
+  }
+
+  /* 选择器网格 */
+  .zodiac-grid,
+  .sign-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xs);
+  }
+
+  .zodiac-item,
+  .sign-item {
+    padding: var(--spacing-sm);
+  }
+
+  .zodiac-item i,
+  .sign-item i {
+    font-size: 1.5rem;
+  }
+
+  .zodiac-item span,
+  .sign-item span {
+    font-size: 0.75rem;
+  }
+
+  /* 签筒 */
+  .签筒 {
+    width: 120px;
+    height: 160px;
+  }
+
+  .签筒 i {
+    font-size: 3rem;
+  }
+
+  /* 标签页 */
+  .tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+
+  /* 结果区域 */
+  .result-card {
+    padding: var(--spacing-md);
+  }
+
+  .result-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+
+  .result-item {
+    padding: var(--spacing-sm) 0;
+  }
+
+  /* 搜索框 */
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box .form-input {
+    width: 100%;
+  }
+
+  .search-box .btn {
+    width: 100%;
+  }
+
+  /* 工具类 */
+  .hide-mobile {
+    display: none !important;
+  }
+
+  .text-center-mobile {
+    text-align: center;
+  }
+}
+
+/* === 小屏手机（< 375px）=== */
+@media screen and (max-width: 374px) {
+  html {
+    font-size: 14px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .zodiac-grid,
+  .sign-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .nav-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fortune-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === 横屏模式 === */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    padding: 5rem 0 2rem;
+    min-height: auto;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .page-header {
+    padding: 4rem 0 1.5rem;
+  }
+}
+
+/* === 打印样式 === */
+@media print {
+  .header,
+  .footer,
+  .ad-banner,
+  .ad-modal,
+  .mobile-menu-btn {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .card {
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+}
