@@ -367,6 +367,98 @@
   }
 }
 
+/* === 新组件响应式 === */
+@media screen and (max-width: 767px) {
+  /* 八字排盘 */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .form-actions .btn {
+    width: 100%;
+  }
+  
+  .bazi-display {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .bazi-pillar {
+    padding: var(--spacing-xs);
+  }
+  
+  .pillar-gan, .pillar-zhi {
+    font-size: 1.25rem;
+  }
+  
+  /* 黄历 */
+  .date-display {
+    flex-direction: column;
+  }
+  
+  .date-info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .jishi-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .shensha-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* 签种选择 */
+  .sign-type-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* 生肖/星座网格 */
+  .zodiac-grid,
+  .sign-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .zodiac-item,
+  .sign-item {
+    padding: var(--spacing-sm);
+  }
+  
+  .zodiac-item i,
+  .sign-item i {
+    font-size: 1.5rem;
+  }
+  
+  /* 关于区域 */
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* 运势网格 */
+  .fortune-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .bazi-display {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .shensha-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .zodiac-grid,
+  .sign-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* === 横屏模式 === */
 @media screen and (max-height: 500px) and (orientation: landscape) {
   .hero {
